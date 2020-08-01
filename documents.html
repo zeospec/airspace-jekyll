@@ -1,0 +1,141 @@
+---
+layout: page
+title: Documents
+permalink: /documents/
+---
+
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation"><a href="#all" aria-controls="all" role="tab" data-toggle="tab"><button class="btn btn-default">All</button></a></li>
+          <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><button class="btn btn-default">Exhibitor</button></a></li>
+          <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab"><button class="btn btn-default">General</button></a></li>
+          <li role="presentation"><a href="#forms" aria-controls="forms" role="tab" data-toggle="tab"><button class="btn btn-default">Forms</button></a></li>
+          <li role="presentation"><a href="#encore" aria-controls="encore" role="tab" data-toggle="tab"><button class="btn btn-default">Encore</button></a></li>
+        </ul>
+        
+      </div>
+    </div>
+    
+    <!-- <div class="row"> -->
+      <div class="col-md-12">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="all">
+            
+            <table class="table table-responsive table-full-width">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>File</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for doc in site.static_files %}
+                {% if doc.path contains 'docs/' %}
+                <tr>
+                  <td>{{doc.name}}</td>
+                  <td><a href="{{ site.baseurl }}{{ doc.path }}" target="_blank"><i class="icon ion-ios-eye"></i> View</a> | <a href="{{ site.baseurl }}{{ doc.path }}" download="{{doc.name}}"><i class="icon ion-md-download"></i> Downlaod</a></td>
+                </tr>
+                {% endif %}
+                {% endfor %}             
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Title</th>
+                  <th>File</th>
+                </tr>
+              </tfoot>
+            </table>
+            
+          </div>
+          <div role="tabpanel" class="tab-pane" id="home">
+            
+            <table class="table table-responsive table-full-width">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>File</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for doc in site.static_files %}
+                {% if doc.path contains 'docs/exhibitor' %}
+                <tr>
+                  <td>{{doc.name}}</td>
+                  <td><a href="{{ site.baseurl }}{{ doc.path }}" target="_blank">View</a> | <a href="{{ site.baseurl }}{{ doc.path }}" download="{{doc.name}}">Downlaod</a></td>
+                </tr>
+                {% endif %}
+                {% endfor %}             
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Title</th>
+                  <th>File</th>
+                </tr>
+              </tfoot>
+            </table>
+            
+          </div>
+          <div role="tabpanel" class="tab-pane" id="general">
+            
+            <table class="table table-responsive table-full-width">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>File</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for doc in site.static_files %}
+                {% if doc.path contains 'docs/general' %}
+                <tr>
+                  <td>{{doc.name}}</td>
+                  <td><a href="{{ site.baseurl }}{{ doc.path }}" target="_blank">View</a> | <a href="{{ site.baseurl }}{{ doc.path }}" download="{{doc.name}}">Downlaod</a></td>
+                </tr>
+                {% endif %}
+                {% endfor %}             
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Title</th>
+                  <th>File</th>
+                </tr>
+              </tfoot>
+            </table>
+            
+          </div>
+          <div role="tabpanel" class="tab-pane" id="forms">
+            <ul>
+              {% for doc in site.static_files %}
+              {% assign lowercase_name = doc.basename | downcase %}
+              {% if doc.path contains 'docs/' and lowercase_name contains 'form' %}
+              <li class="">
+                <a href="{{ site.baseurl }}{{ doc.path }}">{{doc.name}}</a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="encore">
+            <ul>
+              {% for doc in site.static_files %}
+              {% assign lowercase_name = doc.basename | downcase %}
+              {% if doc.path contains 'docs/' and lowercase_name contains 'encore' %}
+              <li class="">
+                <a href="{{ site.baseurl }}{{ doc.path }}">{{doc.name}}</a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</section>

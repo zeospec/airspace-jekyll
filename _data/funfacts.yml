@@ -1,12 +1,12 @@
 - counter: 20000
-  icon: ion-ios-chatboxes-outline
-  text: Cups of Coffee
+  icon: ion-md-time
+  text: Total volunteer hours
 - counter: 1500
-  icon: ion-ios-glasses-outline
-  text: Gallons of Soft Drink
+  icon: ion-ios-people
+  text: Number of volunteers
 - counter: 1200
-  icon: ion-ios-compose-outline
-  text: Whiteboard Markers
+  icon: ion-ios-wallet
+  text: Total cash contributions
 - counter: 300
-  icon: ion-ios-timer-outline
-  text: Websites built
+  icon: ion-ios-heart
+  text: Total in-kind contributions
